@@ -1,0 +1,19 @@
+balance = 0
+while True:
+    inpt=str(input("Enter transaction type and amount(format D 100 or W 120)\nOR\nEnter (q 0)to quit: "))
+    list1=[]
+    list1=inpt.split()
+    t=list1[0]
+    amount=int(list1[1])
+    if t=="D" or t=="d":
+        balance=balance+amount
+        print("Balance is:",balance)
+    elif t=="W" or t=="w":
+        if amount>balance:
+            print("insufficiant balance")
+        else:
+            balance=balance-amount
+            print("Balance is:",balance)
+    else:
+        break
+print("Total balance is: ",balance)
