@@ -1,0 +1,30 @@
+n = int(input('Enter no. of students: '))
+stu_mark = []
+
+for i in range(n):
+    marks = int(input(f'Enter FDS marks for {i}: '))
+    stu_mark.append(marks)
+
+print("Marks of students in FDS are: ")
+
+sum=0
+avg=sum/n
+for i in range(len(stu_mark)):
+    sum=sum+stu_mark[i]
+    i=i+1
+    avg=sum/n
+print(f'Average score of the class {avg}')
+
+'''i = 0
+j = i+1'''
+highest = 0
+for i in range(len(stu_mark)):
+     if stu_mark[i] > highest:
+         highest = stu_mark[i]
+print(f'Highest marks in the class at {highest}')
+
+lowest = stu_mark[0]
+for i in range(len(stu_mark)):
+     if stu_mark[i] < lowest:
+         lowest = stu_mark[i]
+print(f'Lowest marks in the class at {lowest}')
