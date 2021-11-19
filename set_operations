@@ -1,0 +1,46 @@
+A = []
+B = []
+C = []
+a = int(input("\nEnter no. of students who play cricket: "))
+for i in range(a):
+    ele = int(input("Enter elements: "))
+    A.append(ele)
+print(f"List of students who play cricket:{A}")
+
+b = int(input("\nEnter no. of students who play badminton: "))
+for i in range(b):
+    ele = int(input("Enter elements: "))
+    B.append(ele)
+print(f"List of students who play badminton: {B}")
+
+c = int(input("\nEnter no. of students who play football: "))
+for i in range(c):
+    ele = int(input("Enter elements: "))
+    C.append(ele)
+print(f"List of students who play football: {C}")
+
+print("UNION OF TWO SETS")
+uni = []
+for i in range(len(A)):
+    uni.append(A[i])
+for i in range(len(A)):
+    flag=0
+    for j in range(len(B)):
+        if uni[i]==B[j]:
+            flag=1
+        if flag==0:
+            uni.append(B[j])
+
+print(f"\nList of students who play either cricket or badminton and not both {uni}")
+
+print('INTERSECTION OF TWO SETS')
+inter = []
+for j in range(len(A)):
+    flag = 0
+    for i in range(len(B)):
+        if A[i] == B[j]:
+            flag = 1
+            inter.append(A[i])
+        if flag == 0:
+            break
+print(f"List of students who play both cricket and badminton {inter}")
