@@ -1,0 +1,42 @@
+n = int (input("Enter no. of players: "))
+r = []
+for i in range(n):
+    runs = int(input(f"Enter runs cored by player {i + 1}: "))
+    r.append(runs)
+print(r)
+
+sum1 = 0
+avg = 0
+for i in range(n):
+    sum1 = sum1 + r[i]
+    avg = sum1 / n
+print("\nAverage score of the team is", avg)
+
+print("\nHIGHEST and LOWEST scores")
+Min = r[0]
+i = 0
+for i in range(n):
+    if r[i] < Min:
+        Min = r[i]
+        print(f"Lowest score is {r[i]} made by player {i + 1}.")
+
+Max = r[0]
+i = 0
+for i in range(n):
+    if r[i] > Max:
+        Max = r[i]
+        print(f"Highest score is {r[i]} made by player {i + 1}.")
+
+print("\nRuns more than 50")
+count = 0
+for i in range(n):
+    if r[i] > 50:
+        count = count +1
+print("number of players who scored more than 50 is ", count)
+
+j = i +1
+while r[i] == r[j]:
+    count = count +1
+    print("Score with highest frequency is ", r[i])
+    if r[i] != r[j]:
+        break
